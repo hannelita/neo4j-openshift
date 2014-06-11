@@ -1,7 +1,3 @@
-mkdir -p $OPENSHIFT_NEO4J_DIR/cassandra/{log,pid,saved_caches,data,commitlog,pid}
+mkdir -p $OPENSHIFT_NEO4J_DIR/neo4j/{log,pid,saved_caches,data,commitlog,pid}
 
-wget "http://info.neotechnology.com/download_thanks.html?edition=community&release=2.0.3&platform=unix&_ga=1.159987577.515486845.1400712077"
-
-tar -zxvf neo4j-community-2.0.3.tar.gz
-rm neo4j-community-2.0.3.tar.gz
 

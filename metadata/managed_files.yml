@@ -1,0 +1,15 @@
+---
+snapshot_exclusions:
+- neo4j/*
+locked_files:
+- bin/
+- bin/*
+- env/OPENSHIFT_NEO4J_USERNAME
+- env/OPENSHIFT_NEO4J_PASSWORD
+- env/OPENSHIFT_NEO4J_URL
+- metadata/
+- metadata/*
+- hooks/
+- hooks/*
+processed_templates:
+- '**/*.erb'

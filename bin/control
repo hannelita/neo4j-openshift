@@ -1,0 +1,93 @@
+#!/bin/bash
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+export STOPTIMEOUT=10
+
+function is_running {
+  pidfile=$OPENSHIFT_NEO4J_DIR/neo4j/pid/neo4j.pid
+
+  if [ -f $pidfile ]; then
+    neo4j_pid=`cat $pidfile 2> /dev/null`
+
+    if `ps --pid $neo4j_pid > /dev/null 2>&1` 
+    then
+      return 0
+    fi
+  fi
+
+  return 1
+}
+# TODO: account for standalone scenario
+# TODO: source user hooks?
+# Start and block until it comes up.
+function start {
+  if ! is_running; then
+    $OPENSHIFT_NEO4J_DIR/versions/2.0.3/bin/neo4j -p $OPENSHIFT_NEO4J_DIR/neo4j/pid/neo4j.pid
+  else
+    echo "Neo4j already running" 1>&2
+  fi
+}
+
+function wait_for_neo4j_availability {
+  pidfile=$OPENSHIFT_NEO4J_DIR/pid/neo4j.pid
+
+  if [ -n "$OPENSHIFT_NEO4J_DB_USERNAME" ]; then
+    i=0
+    sleep 1
+    while (( ! touch_neo ) || [ ! -f $pidfile ]) && [ $i -lt 30 ]
+    do
+      sleep 1
+      i=$(($i + 1))
+    done
+  fi
+}
+
+function stop {
+  if is_running; then
+    pidfile=$OPENSHIFT_NEO4J_DIR/neo4j/pid/neo4j.pid
+
+    if [ -f $pidfile ]; then
+      pid=$( /bin/cat $pidfile )
+      /bin/kill $pid
+      ret=$?
+      if [ $ret -eq 0 ]; then
+        TIMEOUT="$STOPTIMEOUT"
+        while [ $TIMEOUT -gt 0 ] && [ -f "$pidfile" ]
+        do
+          /bin/kill -0 "$pid" >/dev/null 2>&1 || break
+          sleep 1
+          let TIMEOUT=${TIMEOUT}-1
+        done
+      fi
+    else
+      echo "Neo4j already stopped" 1>&2
+    fi
+  fi
+}
+
+function status {
+  if is_running; then
+    client_result "Neo4j is running" 
+  else
+    client_result "Neo4j is stopped" 
+  fi
+
+  exit 0
+}
+
+case "$1" in
+  start)
+    start
+  ;;
+  stop)
+    stop
+  ;;
+  status)
+    status
+  ;;
+  restart)
+    stop
+    start
+  ;;
+esac
