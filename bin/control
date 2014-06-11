@@ -23,7 +23,7 @@ function is_running {
 # Start and block until it comes up.
 function start {
   if ! is_running; then
-    $OPENSHIFT_NEO4J_DIR/versions/2.0.3/bin/neo4j -p $OPENSHIFT_NEO4J_DIR/neo4j/pid/neo4j.pid
+    $OPENSHIFT_NEO4J_DIR/versions/2.0.3/bin/neo4j 
   else
     echo "Neo4j already running" 1>&2
   fi
