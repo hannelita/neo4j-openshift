@@ -9,6 +9,7 @@ Cartridge-Version: 1.0.0
 Cartridge-Vendor: hannelita
 Categories:
   - service
+  - database
 Cart-Data:
   - Key: "username"
     Type: cart_data
@@ -24,10 +25,7 @@ Cart-Data:
     Description: "Neo4j connection URL"
 Provides:
   - neo4j-2.0.3
-  - "neo4j"
-  - "neo4j (version) = 2.0.3"
-  - "neo4j (version) = 2.0"
-  - "neo4j (version) = 2"
+  - neo4j-singleton-master
 Publishes:
   publish-db-connection-info:
     Type: "ENV:NET_TCP:db:connection-info"
