@@ -1,6 +1,7 @@
 Name: neo4j
 Cartridge-Short-Name: Neo4j
 Display-Name: Neo4j 2.0.3
+Architecture: noarch
 Version: "2.0.3"
 Versions: ["2.0.3"]
 Source-Url: https://github.com/hannelita/neo4j-openshift.git
@@ -29,9 +30,6 @@ Provides:
   - "neo4j (version) = 2.0.3"
   - "neo4j (version) = 2.0"
   - "neo4j (version) = 2"
-Scaling:
-  Min: 1
-  Max: -1
 Publishes:
   publish-db-connection-info:
     Type: "ENV:NET_TCP:db:connection-info"
