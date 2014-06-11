@@ -1,0 +1,78 @@
+22:19:07,743 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+22:19:07,744 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+22:19:07,744 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/Users/hannelita/Downloads/neo4j-community-2.0.3/system/lib/neo4j-server-2.0.3.jar!/logback.xml]
+22:19:07,764 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@bbf4061 - URL [jar:file:/Users/hannelita/Downloads/neo4j-community-2.0.3/system/lib/neo4j-server-2.0.3.jar!/logback.xml] is not of type file
+22:19:07,911 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+22:19:07,969 |-ERROR in ch.qos.logback.core.util.ContextUtil@391ba64d - Failed to get local hostname java.net.UnknownHostException: 177-213-38-71.user.vivozap.com.br: 177-213-38-71.user.vivozap.com.br: nodename nor servname provided, or not known
+	at java.net.UnknownHostException: 177-213-38-71.user.vivozap.com.br: 177-213-38-71.user.vivozap.com.br: nodename nor servname provided, or not known
+	at 	at java.net.InetAddress.getLocalHost(InetAddress.java:1473)
+	at 	at ch.qos.logback.core.util.ContextUtil.getLocalHostName(ContextUtil.java:32)
+	at 	at ch.qos.logback.core.util.ContextUtil.addHostNameAsProperty(ContextUtil.java:41)
+	at 	at ch.qos.logback.classic.joran.action.ConfigurationAction.begin(ConfigurationAction.java:56)
+	at 	at ch.qos.logback.core.joran.spi.Interpreter.callBeginAction(Interpreter.java:276)
+	at 	at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:148)
+	at 	at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:130)
+	at 	at ch.qos.logback.core.joran.spi.EventPlayer.play(EventPlayer.java:50)
+	at 	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:157)
+	at 	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:143)
+	at 	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:106)
+	at 	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:56)
+	at 	at ch.qos.logback.classic.util.ContextInitializer.configureByResource(ContextInitializer.java:75)
+	at 	at ch.qos.logback.classic.util.ContextInitializer.autoConfig(ContextInitializer.java:148)
+	at 	at org.slf4j.impl.StaticLoggerBinder.init(StaticLoggerBinder.java:85)
+	at 	at org.slf4j.impl.StaticLoggerBinder.<clinit>(StaticLoggerBinder.java:55)
+	at 	at org.slf4j.LoggerFactory.bind(LoggerFactory.java:128)
+	at 	at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:108)
+	at 	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:279)
+	at 	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:252)
+	at 	at org.apache.commons.logging.impl.SLF4JLogFactory.getInstance(SLF4JLogFactory.java:156)
+	at 	at org.apache.commons.logging.impl.SLF4JLogFactory.getInstance(SLF4JLogFactory.java:132)
+	at 	at org.apache.commons.logging.LogFactory.getLog(LogFactory.java:685)
+	at 	at org.apache.commons.configuration.AbstractFileConfiguration.<init>(AbstractFileConfiguration.java:121)
+	at 	at org.apache.commons.configuration.AbstractFileConfiguration.<init>(AbstractFileConfiguration.java:154)
+	at 	at org.apache.commons.configuration.PropertiesConfiguration.<init>(PropertiesConfiguration.java:252)
+	at 	at org.neo4j.server.configuration.PropertyFileConfigurator.loadPropertiesConfig(PropertyFileConfigurator.java:132)
+	at 	at org.neo4j.server.configuration.PropertyFileConfigurator.<init>(PropertyFileConfigurator.java:67)
+	at 	at org.neo4j.server.Bootstrapper.createConfigurator(Bootstrapper.java:215)
+	at 	at org.neo4j.server.Bootstrapper.start(Bootstrapper.java:93)
+	at 	at org.neo4j.server.Bootstrapper.main(Bootstrapper.java:57)
+Caused by: java.net.UnknownHostException: 177-213-38-71.user.vivozap.com.br: nodename nor servname provided, or not known
+	at 	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at 	at java.net.InetAddress$1.lookupAllHostAddr(InetAddress.java:901)
+	at 	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1293)
+	at 	at java.net.InetAddress.getLocalHost(InetAddress.java:1469)
+	at 	... 30 common frames omitted
+22:19:07,969 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+22:19:07,978 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+22:19:08,033 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+22:19:08,163 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+22:19:08,163 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+22:19:08,164 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+22:19:08,173 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@77c55a79 - Registering current configuration as safe fallback point
+
+22:19:08.451 [main] INFO  org.neo4j.server.CommunityNeoServer - Setting startup timeout to: 120000ms based on -1
+2014-05-24 01:19:09.858+0000 INFO  [API] Successfully started database
+2014-05-24 01:19:10.291+0000 INFO  [API] Starting HTTP on port :7474 with 40 threads available
+2014-05-24 01:19:10.610+0000 INFO  [API] Enabling HTTPS on port :7473
+2014-05-24 01:19:10.610+0000 INFO  [API] No SSL certificate found, generating a self-signed certificate..
+2014-05-24 01:19:10.979+0000 INFO  [API] Mounted discovery module at [/]
+2014-05-24 01:19:10.994+0000 INFO  [API] Mounted REST API at [/db/data/]
+2014-05-24 01:19:11.000+0000 INFO  [API] Mounted management API at [/db/manage/]
+2014-05-24 01:19:11.001+0000 INFO  [API] Mounted webadmin at [/webadmin]
+2014-05-24 01:19:11.001+0000 INFO  [API] Mounted Neo4j Browser at [/browser]
+2014-05-24 01:19:11.130+0000 INFO  [API] Mounting static content at [/webadmin] from [webadmin-html]
+2014-05-24 01:19:11.227+0000 INFO  [API] Mounting static content at [/browser] from [browser]
+22:19:11.229 [main] WARN  o.e.j.server.handler.ContextHandler - o.e.j.s.ServletContextHandler@3cf08d9e{/,null,null} contextPath ends with /
+22:19:11.229 [main] WARN  o.e.j.server.handler.ContextHandler - Empty contextPath
+22:19:11.235 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.0.5.v20130815
+22:19:11.269 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.h.MovedContextHandler@7ef1accd{/,null,AVAILABLE}
+22:19:11.384 [main] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /webadmin, did not find org.apache.jasper.servlet.JspServlet
+22:19:11.401 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.w.WebAppContext@5a347342{/webadmin,jar:file:/Users/hannelita/Downloads/neo4j-community-2.0.3/system/lib/neo4j-server-2.0.3-static-web.jar!/webadmin-html,AVAILABLE}
+22:19:12.039 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@575c6dd1{/db/manage,null,AVAILABLE}
+22:19:12.317 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@2dcf5261{/db/data,null,AVAILABLE}
+22:19:12.342 [main] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /browser, did not find org.apache.jasper.servlet.JspServlet
+22:19:12.344 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.w.WebAppContext@977ccc3{/browser,jar:file:/Users/hannelita/Downloads/neo4j-community-2.0.3/system/lib/neo4j-browser-2.0.3.jar!/browser,AVAILABLE}
+22:19:12.459 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@3cf08d9e{/,null,AVAILABLE}
+22:19:12.488 [main] INFO  o.e.jetty.server.ServerConnector - Started ServerConnector@62f5ae30{HTTP/1.1}{localhost:7474}
+22:19:13.005 [main] INFO  o.e.jetty.server.ServerConnector - Started ServerConnector@61d72405{SSL-HTTP/1.1}{localhost:7473}
+2014-05-24 01:19:13.006+0000 INFO  [API] Remote interface ready and available at [http://localhost:7474/]
