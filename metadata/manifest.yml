@@ -10,7 +10,6 @@ Cartridge-Vendor: hannelita
 Categories:
   - service
   - database
-  - embedded
 Cart-Data:
   - Key: "username"
     Type: cart_data
