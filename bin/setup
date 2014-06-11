@@ -1,3 +1,4 @@
 #!/bin/bash -e
 
 mkdir -p $OPENSHIFT_NEO4J_DIR/neo4j/{log,pid,saved_caches,data,commitlog}
+echo "SETUP"
