@@ -3,7 +3,7 @@ Cartridge-Short-Name: Neo4j
 Display-Name: Neo4j 2.0.3
 Version: "2.0.3"
 Versions: ["2.0.3"]
-Source-Url: git@github.com:hannelita/neo4j-openshift.git
+Source-Url: "git@github.com:hannelita/neo4j-openshift.git"
 Cartridge-Version: 1.0.0
 Cartridge-Vendor: hannelita
 Categories:
