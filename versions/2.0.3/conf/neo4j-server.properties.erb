@@ -13,14 +13,14 @@ org.neo4j.server.database.location=data/graph.db
 # Let the webserver only listen on the specified IP. Default is localhost (only
 # accept local connections). Uncomment to allow any connection. Please see the
 # security section in the neo4j manual before modifying this.
-org.neo4j.server.webserver.address=0.0.0.0
+org.neo4j.server.webserver.address=<%= ENV['OPENSHIFT_NEO4J_DB_HOST'] %>
 
 #
 # HTTP Connector
 #
 
 # http port (for all data, administrative, and UI access)
-org.neo4j.server.webserver.port=7474
+org.neo4j.server.webserver.port=<%= ENV['OPENSHIFT_NEO4J_DB_PORT'] %>
 
 #
 # HTTPS Connector
