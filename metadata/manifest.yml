@@ -8,8 +8,7 @@ Source-Url: https://github.com/hannelita/neo4j-openshift.git
 Cartridge-Version: 1.0.0
 Cartridge-Vendor: hannelita
 Categories:
-  - service
-  - database
+  - web_framework
 Cart-Data:
   - Key: "username"
     Type: cart_data
