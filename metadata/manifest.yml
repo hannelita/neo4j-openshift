@@ -9,7 +9,9 @@ Cartridge-Version: 1.0.0
 Cartridge-Vendor: hannelita
 Categories:
   - service
-  - web_framework
+  - database
+  - nosql
+  - embedded
 Cart-Data:
   - Key: "username"
     Type: cart_data
