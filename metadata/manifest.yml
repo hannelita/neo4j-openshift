@@ -1,0 +1,44 @@
+Name: neo4j
+Cartridge-Short-Name: Neo4j
+Display-Name: Neo4j 2.0.3
+Version: "2.0.3"
+Versions: ["2.0.3"]
+Website: https://github.com/hannelita/neo4j-openshift
+Cartridge-Version: 1.0.0
+Cartridge-Vendor: hannelita
+Categories:
+  - service
+  - web_framework
+Provides:
+  - neo4j-2.0.3
+  - "neo4j"
+  - "neo4j (version) = 2.0.3"
+  - "neo4j (version) = 2.0"
+  - "neo4j (version) = 2"
+Scaling:
+  Min: 1
+  Max: -1
+Publishes:
+  get-doc-root:
+    Type: "FILESYSTEM:doc-root"
+  publish-http-url:
+    Type: "NET_TCP:httpd-proxy-info"
+  publish-gear-endpoint:
+    Type: "NET_TCP:gear-endpoint-info"
+Subscribes:
+  set-db-connection-info:
+    Type: "ENV:NET_TCP:db:connection-info"
+    Required: false
+  set-mysql-connection-info:
+    Type: "NET_TCP:db:mysql"
+    Required : false
+  set-postgres-connection-info:
+    Type: "NET_TCP:db:postgres"
+    Required : false
+  set-nosql-db-connection-info:
+    Type: "ENV:NET_TCP:nosqldb:connection-info"
+    Required : false
+Group-Overrides:
+  - components:
+    - web_proxy
+Install-Build-Required: true
