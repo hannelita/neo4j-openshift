@@ -9,7 +9,6 @@ Cartridge-Version: 1.0.0
 Cartridge-Vendor: hannelita
 Categories:
   - service
-  - database
 Cart-Data:
   - Key: "username"
     Type: cart_data
